@@ -6,10 +6,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t MYIMAGE -f Dockerfile.dev .
+  - docker build -t rosovski/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true MYIMAGE npm run test
+  - docker run -e CI=true rosovski/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
